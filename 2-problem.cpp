@@ -30,7 +30,7 @@ int main() {
     
     cout << endl;
     cout << "*This program works only with integers*" << endl;
-    cout << "Enter the radius of the circle, to calculate the area and the permieter: " << endl; 
+    cout << "Enter the radius of the circle, to calculate the area and the perimeter: " << endl; 
     cin >> radius;
     
     perimeterResponse = perimeter(radius);
