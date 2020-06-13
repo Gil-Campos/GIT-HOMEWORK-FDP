@@ -10,8 +10,11 @@ int salarioEmpleados() {
     int count = 0;
     int empleados;
     float horas, horasExtra;
-    float *horasTrabajadas = new float[empleados];
-    float *horasExtraordinarias = new float[empleados];
+    //float *horasTrabajadas = new float[empleados];
+    //float *horasExtraordinarias = new float[empleados];
+
+    float horasT[empleados];
+    float horasE[empleados];
 
     cout << "Por favor ingresa la cantidad de empleados: ";
     cin >> empleados;
@@ -23,13 +26,15 @@ int salarioEmpleados() {
         cin >> horas;
         cout << endl;
 
-        horasTrabajadas[count] = horas;
+        //horasTrabajadas[count] = horas;
+        horasT[count] = horas;
 
         cout << "Ingresa horas extraordinarias trabajadas: " << endl;
         cin >> horasExtra;
         cout << endl;
 
-        horasExtraordinarias[count] = horasExtra;
+        //horasExtraordinarias[count] = horasExtra;
+        horasE[count] = horasExtra;
 
         cout << "=================================================" << endl;
         cout << endl;
@@ -37,7 +42,8 @@ int salarioEmpleados() {
         count += 1;
     }
     
-    salarioCalc(horasTrabajadas, horasExtraordinarias, empleados); 
+    //salarioCalc(horasTrabajadas, horasExtraordinarias, empleados); 
+    salarioCalc(horasT, horasE, empleados); 
 
     return 0;
 }
