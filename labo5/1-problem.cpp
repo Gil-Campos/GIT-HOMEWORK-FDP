@@ -1,68 +1,63 @@
 #include <iostream>
 #include <string>
 
-int salarioCalc(float [], float [], int);
-
 using namespace std;
+
+int salarioCalc(float [], float [], int);
+void salarioCalcTest(float , float, int);
 
 int salarioEmpleados() {
 
-    int count = 0;
+    int count = 1;
     int empleados;
     float horas, horasExtra;
-
-    float horasT[empleados];
-    float horasE[empleados];
+    float horasT;
+    float horasE;
 
     cout << "Por favor ingresa la cantidad de empleados: ";
     cin >> empleados;
     cout << endl;
 
 
-    while (count < empleados) {
-        cout << "Ingresa horas trabajadas del empleado num " << count + 1 << ":" << endl;
+    while (count <= empleados) {
+        cout << "Ingresa horas trabajadas del empleado num " << count << ": ";
         cin >> horas;
         cout << endl;
 
-        horasT[count] = horas;
+        horasT = horas;
 
-        cout << "Ingresa horas extraordinarias trabajadas: " << endl;
+        cout << "Ingresa horas extraordinarias trabajadas: ";
         cin >> horasExtra;
         cout << endl;
 
-        horasE[count] = horasExtra;
+        horasE = horasExtra;
+
+        salarioCalcTest(horasT, horasE, count);
 
         cout << "=================================================" << endl;
         cout << endl;
 
         count += 1;
+
     }
-     
-    salarioCalc(horasT, horasE, empleados); 
 
     return 0;
 }
 
-int salarioCalc(float horasT[], float horasE[], int size) {
+void salarioCalcTest(float horasT, float horasE, int empleado) {
 
     float salarioReal, salarioTotal;
 
-    for (int i = 0; i < size; i++) {
-        
-        salarioTotal = (horasT[i] * 1.75) + (horasE[i] * 2.50);
+    salarioTotal = (horasT * 1.75) + (horasE * 2.50);
 
-        if (salarioTotal > 500) {
-            salarioReal = salarioTotal - (salarioTotal * 0.04) - (salarioTotal * 0.0625) - (salarioTotal * 0.1);
-        } else {
-            salarioReal = salarioTotal - (salarioTotal * 0.04) - (salarioTotal * 0.0625);
-        }
-
-        cout << "Empleado " << i + 1 << " salario total " << "$" << salarioTotal << " y salario real " << "$" << salarioReal << endl;
-        cout << endl;
-
+    if (salarioTotal > 500) {
+        salarioReal = salarioTotal - (salarioTotal * 0.04) - (salarioTotal * 0.0625) - (salarioTotal * 0.1);
+    } else {
+        salarioReal = salarioTotal - (salarioTotal * 0.04) - (salarioTotal * 0.0625);
     }
-    
-    return 0;
+
+    cout << "Empleado " << empleado << " salario total " << "$" << salarioTotal << " y salario real " << "$" << salarioReal << endl;
+    cout << endl;
 }
 
 int main() {
