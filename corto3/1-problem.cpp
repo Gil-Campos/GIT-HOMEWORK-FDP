@@ -3,8 +3,7 @@
 
 using namespace std;
 
-int salarioCalc(float [], float [], int);
-void salarioCalcTest(float , float, int);
+void salarioCalc(float , float, int);
 
 int salarioEmpleados() {
 
@@ -32,7 +31,8 @@ int salarioEmpleados() {
 
         horasE = horasExtra;
 
-        salarioCalcTest(horasT, horasE, count);
+        //funcion para recibir las horas y efectuar los calculos de los salarios para cada empleado.
+        salarioCalc(horasT, horasE, count);
 
         cout << "=================================================" << endl;
         cout << endl;
@@ -44,12 +44,13 @@ int salarioEmpleados() {
     return 0;
 }
 
-void salarioCalcTest(float horasT, float horasE, int empleado) {
+void salarioCalc(float horasT, float horasE, int empleado) {
 
     float salarioReal, salarioTotal;
 
     salarioTotal = (horasT * 1.75) + (horasE * 2.50);
 
+    //Chequeo de suma para ver si el salario aplica al impuesto de renta.
     if (salarioTotal > 500) {
         salarioReal = salarioTotal - (salarioTotal * 0.04) - (salarioTotal * 0.0625) - (salarioTotal * 0.1);
     } else {

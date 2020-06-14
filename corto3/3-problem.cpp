@@ -1,8 +1,8 @@
 #include <iostream>
 
-int checkAño(int); 
-
 using namespace std;
+
+int checkAño(int); 
 
 int añoBisiesto() {
 
@@ -12,6 +12,7 @@ int añoBisiesto() {
     cin >> año;
     cout << endl;
 
+    //Chequeo de tipo de datos (se detendra el bucle al recibir un entero de lo contrario seguira preguntando).
     while(1) {
         if (cin.fail()) {
             cin.clear();
@@ -23,6 +24,7 @@ int añoBisiesto() {
         }
     }
 
+    //funcion para el chequeo de año
     checkAño(año);
 
     return 0;
