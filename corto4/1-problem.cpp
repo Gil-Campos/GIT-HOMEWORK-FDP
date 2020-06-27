@@ -2,10 +2,9 @@
 #include <vector>
 
 using namespace std;
-void testArrays();
-void encriptData(char arr2[], int limit);
+void encryptData();
 
-void testArrays() {
+void encryptData() {
 
     int limit; 
     char arr1[limit];
@@ -72,6 +71,6 @@ void testArrays() {
 }
 
 int main() {
-    testArrays();
+    encryptData();
     return 0;
 }
