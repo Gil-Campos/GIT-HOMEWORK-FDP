@@ -19,6 +19,10 @@ void estaturaAlumnos() {
     
 
     media = calcMediaEstaturas(estaturas, 25);
+    
+    cout << endl;
+    cout << "Esta es la media de la estatura de los estudiantes: " << media;
+    cout << endl;
 
     for (int i = 0; i < 25; i++) 
     {
