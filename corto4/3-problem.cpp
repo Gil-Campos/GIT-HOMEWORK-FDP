@@ -1,11 +1,12 @@
 #include <iostream>
 
 using namespace std;
+
 void tomarNotas();
 void calcNota(float notasEstudiante[][5], int limit);
 
 void tomarNotas() {
-    int estudiantes, counterEs = 1, counterNo = 0;
+    int estudiantes = 1, counterEs = 1, counterNo = 0;
     float notasEstudiantes[estudiantes][5], nota;
 
     cout << endl;
@@ -28,15 +29,20 @@ void tomarNotas() {
         counterEs += 1;
         //cout << "Contador de estudiantes: " << counterEs << endl;
         counterNo = 0;
+        
+        cout << "----------------------------------------------------" << endl;
     } 
 
     calcNota(notasEstudiantes, estudiantes); 
 
 }
 
+
 void calcNota(float notasEstudiante[][5], int limit) 
 {
     float sum = 0;
+    
+    cout << "Notas de los estudiantes:" << endl;
 
     for (int i = 0; i < limit; i++)
     {
@@ -47,13 +53,14 @@ void calcNota(float notasEstudiante[][5], int limit)
 
         if (sum >= 6.0)
         {
-            cout << "El alumno " << i << " a aprobado la materia" << endl;
+            cout << "El alumno " << i + 1 << " a aprobado la materia" << endl;
         } else {
-            cout << "El alumno " << i << " es una deshonra a su familia." << endl;
+            cout << "El alumno " << i + 1 << " es una deshonra a su familia." << endl;
         }
     } 
 
 }
+
 
 int main() {
     tomarNotas();
