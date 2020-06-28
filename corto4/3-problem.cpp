@@ -6,13 +6,15 @@ void tomarNotas();
 void calcNota(float notasEstudiante[][5], int limit);
 
 void tomarNotas() {
-    int estudiantes = 1, counterEs = 1, counterNo = 0;
-    float notasEstudiantes[estudiantes][5], nota;
+    int estudiantes,counterEs = 1, counterNo = 0;
 
     cout << endl;
     cout << "Ingrese la cantidad de estudiantes a los que se le ingresaran las notas por favor: ";
     cin >> estudiantes;
     cout << endl;
+    
+    float notasEstudiantes[estudiantes][5], nota;
+    
 
     while (counterEs <= estudiantes) 
     {   
