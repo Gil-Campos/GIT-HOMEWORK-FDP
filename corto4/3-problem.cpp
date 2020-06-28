@@ -60,7 +60,7 @@ void calcNota(float notasEstudiante[][5], int limit)
             cout << "El alumno " << i + 1 << " es una deshonra a su familia y a dejado la materia con una nota de " << sum << endl;
         }
         
-        sum = 0
+        sum = 0;
     } 
 
 }
