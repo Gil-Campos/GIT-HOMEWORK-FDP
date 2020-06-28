@@ -55,7 +55,7 @@ void calcNota(float notasEstudiante[][5], int limit)
 
         if (sum >= 6.0)
         {
-            cout << "El alumno " << i + 1 << " a aprobado la materia con una nota de" << sum << endl;
+            cout << "El alumno " << i + 1 << " a aprobado la materia con una nota de " << sum << endl;
         } else {
             cout << "El alumno " << i + 1 << " es una deshonra a su familia y a dejado la materia con una nota de " << sum << endl;
         }
