@@ -1,10 +1,8 @@
 #include <iostream>
+#include <cstring>
 #include <string>
 
 using namespace std;
-
-//Declaring functions
-
 
 const int longCad = 20;
 
@@ -16,29 +14,43 @@ struct costoPorArticulo
     float costoPorArticulo;
 };
 
+//Declaring functions
+void IncorporandoDatos(int size, costoPorArticulo []);
+void costoArticulos(int size, costoPorArticulo []);
+
+void IncorporandoDatos(int size, costoPorArticulo arr2[]) 
+{
+    string nombreArt;
+
+    for (int i = 0; i < size; i++)
+    {   
+        cout << endl; 
+        cout << "---------------------------------------------" << endl;
+        cout << "Nombre del producto " << i + 1 << ":" << endl;
+        getline(cin, nombreArt, '\n');
+        strncpy(arr2[i].nombreArticul, nombreArt.c_str(), longCad);
+        arr2[i].nombreArticul[longCad] = '\0';
+        cout << "Cantidad comprada:" << endl;
+        cin >> arr2[i].cantidad;
+        cout << "Precio del articulo:" << endl;
+        cin >> arr2[i].costoPorArticulo;
+        cout << "---------------------------------------------" << endl;
+        cin.ignore(123, '\n');
+    }
+}
+
 int main() {
 
-    int cantiProdComprados = 0, counter = 1;
-    struct costoPorArticulo arr1[cantiProdComprados];
+    int cantiProdComprados;
 
     cout << endl;
     cout << "Por favor ingresa la cantidad de articulos comprados:" << endl;
     cin >> cantiProdComprados;
     cin.ignore(123, '\n');
-    cout << endl;
 
-    while (counter <= cantiProdComprados)
-    {
-        cout << "-Nombre del articulo " << counter << ":" << endl;
-        cin.getline(arr1[counter - 1].nombreArticul, longCad + 1, '\n'); 
-        cout << endl;
-        counter += 1;
-    }
+    costoPorArticulo arr1[cantiProdComprados];
 
-    for (int i = 0; i < cantiProdComprados; i++)
-    {
-        cout << arr1[i].nombreArticul;
-    }  
+    IncorporandoDatos(cantiProdComprados, arr1);
 
     return 0;
 }
