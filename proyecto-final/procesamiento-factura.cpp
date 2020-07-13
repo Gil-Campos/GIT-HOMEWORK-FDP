@@ -18,6 +18,7 @@ struct costoPorArticulo
 void IncorporandoDatos(int, costoPorArticulo []);
 void costoArticulos(int, costoPorArticulo []);
 void factura(int, costoPorArticulo []);
+float gasto(int, costoPorArticulo []);
 
 void IncorporandoDatos(int size, costoPorArticulo arr2[]) 
 {
@@ -62,10 +63,20 @@ void factura(int size, costoPorArticulo arr4[])
     
 }
 
+float gasto(int size, costoPorArticulo arr5[])
+{
+    float count = 0;
+    for (int i = 0; i < size; i++)
+    {
+        count += arr5[i].precio;
+    }
+
+    return count;
+}
+
 int main() {
 
     int cantiProdComprados;
-    float gasto = 0;
 
     cout << endl;
     cout << "Por favor ingresa la cantidad de articulos comprados:" << endl;
@@ -77,14 +88,9 @@ int main() {
     IncorporandoDatos(cantiProdComprados, arr1);
     costoArticulos(cantiProdComprados, arr1);
     factura(cantiProdComprados, arr1);
-    
-    for (int i = 0; i < cantiProdComprados; i++)
-    {
-        gasto += arr1[i].precio;
-    }
 
     cout << endl;
-    cout << "Total gastado $" << gasto;
+    cout << "Total gastado $" << gasto(cantiProdComprados, arr1);
     cout << endl;
 
     return 0;
