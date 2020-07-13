@@ -24,6 +24,11 @@ void IncorporandoDatos(int size, costoPorArticulo arr2[])
 {
     string nombreArt;
 
+    /*
+    Se hace uso de funciones de la libreria cstring para para poder manejar mejor las cadenas
+    y podes agregar los espacios.
+    */
+
     cout << "---------------------------------------------" << endl;
     for (int i = 0; i < size; i++)
     {   
@@ -84,6 +89,12 @@ int main() {
     cin.ignore(123, '\n');
 
     costoPorArticulo arr1[cantiProdComprados];
+
+    /*
+    Se usa el mismo arreglo en todas las funciones porque lo estamos pasando por referencia,
+    asi usamos el mismo arreglo y los cambios se podran verificar desde cualquier parte del
+    programa.
+    */
 
     IncorporandoDatos(cantiProdComprados, arr1);
     costoArticulos(cantiProdComprados, arr1);
